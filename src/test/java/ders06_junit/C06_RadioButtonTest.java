@@ -12,6 +12,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 
 public class C06_RadioButtonTest {
+    /*
+    junit otomatik olarak test sonucları passed veya failed olarak verir.
+    Ancak;
+    junit kodun calıştıgını ve problemsiz olark bittgini raporlar.
+    junit de assert class i kullanarak test lerimiz yaprsak bu durumda uygun raporlara ulaşacaız.
+
+     */
+
+
     // https://www.facebook.com adresine gidin
     // Cookies’i kabul edin
     // “Create an Account” button’una basin
