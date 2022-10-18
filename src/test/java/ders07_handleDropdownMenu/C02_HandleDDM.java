@@ -33,7 +33,7 @@ public class C02_HandleDDM {
         driver.get("https://www.amazon.com");
         WebElement DDM=driver.findElement(By.id("searchDropdownBox"));
         Select select=new Select(DDM);
-       List<WebElement> alleOptions=select.getOptions();
+        List<WebElement> alleOptions=select.getOptions();
 
         //tum optionların neler oldugunu gorelim
 
@@ -44,8 +44,6 @@ public class C02_HandleDDM {
         int quantityofOptions=alleOptions.size();
         //System.out.println(quantityofOptions);//28
         Assert.assertEquals(27,quantityofOptions);
-
-
     }
 
 

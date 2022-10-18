@@ -20,7 +20,7 @@ public class yoklamaclassi {
         driver.findElement(By.xpath("(//span[@class=\"NPEfkd RveJvd snByac\"])[2]")).click();
         String wishToSee="Yanıtınız kaydedildi.";
         Assert.assertTrue(driver.getPageSource().contains(wishToSee));
-        Thread.sleep(5000);
+        Thread.sleep(2000);
         driver.close();
 
     }
