@@ -23,10 +23,30 @@ public class C01ileiligiliOdev extends TestBase {
      */
 
     @Test
-    public void test01(){
+    public void test01() throws InterruptedException {
+        driver.get("http://demo.guru99.com/test/guru99home/");
+        /*boolean sonuc =driver.getPageSource().contains("iframe");
+        if (sonuc){System.out.println("iframe var");} else {System.out.println("iframe yok");}
 
+         */
+        int thenumberOfIframes=driver.findElements(By.tagName("iframe")).size();
+        System.out.println(thenumberOfIframes);//9
+        driver.switchTo().frame("gdpr-consent-notice");
 
+        WebElement acceptCookies=driver.findElement(By.xpath("//span[text()='Tümünü Kabul Et']"));
+        acceptCookies.click();
+        driver.switchTo().defaultContent();
 
+        WebElement youtubeFramei= driver.findElement(By.xpath("//iframe[@src=\"https://www.youtube.com/embed/RbSlW8jZFe8\"]"));
+        driver.switchTo().frame(youtubeFramei);
+        driver.findElement(By.xpath("//button[@class=\"ytp-large-play-button ytp-button ytp-large-play-button-red-bg\"]")).click();
+        Thread.sleep(2000);
+
+        driver.switchTo().defaultContent();
+
+        driver.switchTo().frame("a077aa5e");
+        driver.findElement(By.xpath("//img[@src=\"Jmeter720.png\"]")).click();
+        Thread.sleep(2000);
 
     }
 
