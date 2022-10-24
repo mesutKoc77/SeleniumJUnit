@@ -21,7 +21,15 @@ public class TestBase {
 
     @After
    public void teardown(){
-       driver.close();
+      driver.close();
+    }
+
+    public static void bekle(int beklenecekSure){
+        try {
+            Thread.sleep(beklenecekSure*1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

@@ -30,7 +30,7 @@ public class C04_MoveToElement extends TestBase {
 
     WebElement YourListsElement=driver.findElement(By.xpath("(//span[@class=\"nav-a-content\"])[1]"));
     Assert.assertTrue(YourListsElement.isDisplayed());
-    Thread.sleep(5000);
+    bekle(5);
 
     }
 
