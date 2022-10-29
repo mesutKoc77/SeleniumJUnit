@@ -76,5 +76,5 @@ public class C04_Senkronizasyon {
     driver.findElement(By.xpath("//img[@src=\"https://i.ytimg.com/vi/6ggTmB_mdcg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDoFPQc57tZZW0L5Veu9cK4uDbwtw\"]")).click();
 
 }
-//kalınan 2.01
+
 }

@@ -14,7 +14,7 @@ public class yoklamaclassi {
         WebDriverManager.chromedriver().setup();
         WebDriver driver=new ChromeDriver();
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         driver.get("https://docs.google.com/forms/d/e/1FAIpQLSd5_I3e-wir0s68TFyY3Cj3Th4vjusJ4xv1aUET0Y4i-sY9cQ/viewform");
         driver.findElement(By.xpath("(//input[@jsname=\"YPqjbf\"])[1]")).sendKeys("Mesut KOÇ");
         driver.findElement(By.xpath("(//input[@jsname=\"YPqjbf\"])[2]")).sendKeys("mkoc1367@gmail.com");
