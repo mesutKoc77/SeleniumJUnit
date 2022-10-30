@@ -73,7 +73,7 @@ public class C04_Senkronizasyon {
     Thread.sleep(5000);
     driver.findElement(By.xpath("(//div[@class=\"yt-spec-touch-feedback-shape yt-spec-touch-feedback-shape--touch-response-inverse\"])[1]")).click();
     Thread.sleep(5000);
-    driver.findElement(By.xpath("//img[@src=\"https://i.ytimg.com/vi/6ggTmB_mdcg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDoFPQc57tZZW0L5Veu9cK4uDbwtw\"]")).click();
+
 
 }
 
