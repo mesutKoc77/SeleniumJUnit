@@ -24,6 +24,5 @@ public class yoklamaclassi {
         Assert.assertTrue(driver.getPageSource().contains(wishToSee));
         Thread.sleep(2000);
         driver.close();
-
     }
 }
