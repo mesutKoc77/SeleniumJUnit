@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import utilities.TestBase;
 
 import static org.junit.Assert.assertEquals;
@@ -32,11 +33,17 @@ public class practice01_RegisterUser extends TestBase {
 11. Select checkbox 'Receive special offers from our partners!'
 
 12. Fill details: First name, Last name, Company, Address, Address2, Country, State, City, Zipcode, Mobile Number
+
 13. Click 'Create Account button'
+
 14. Verify that 'ACCOUNT CREATED!' is visible
+
 15. Click 'Continue' button
+
 16. Verify that 'Logged in as username' is visible
+
 17. Click 'Delete Account' button
+
 18. Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button
      */
 
@@ -81,24 +88,41 @@ public class practice01_RegisterUser extends TestBase {
         driver.findElement(By.xpath("//input[@id=\"newsletter\"]")).click();
         driver.findElement(By.xpath("//input[@name=\"optin\"]")).click();
         bekle(1);
-        //12. Fill details: First name, Last name, Company, Address, Address2, Country, State, City, Zipcode, Mobile Number
+        //12. Fill details: First name, Last name, Company, Address, Address2, Country, State,
+        // City, Zipcode, Mobile Number
+        WebElement firstName=driver.findElement(By.id("first_name"));
+        actions.click(firstName).sendKeys(faker.name().firstName()).
+                sendKeys(Keys.TAB).
+                sendKeys(faker.name().lastName()).
+                sendKeys(Keys.TAB).
+                sendKeys(faker.name().title()).sendKeys(Keys.TAB).
+                sendKeys(faker.address().fullAddress()).sendKeys(Keys.TAB).perform();
+        WebElement DDM2=driver.findElement(By.id("country"));
+        Select select=new Select(DDM2);
+        select.selectByValue("United States");
+        select.getFirstSelectedOption().click();
+        WebElement state=driver.findElement(By.xpath("//input[@name='state']"));
 
+        actions.click(state).sendKeys(faker.country().capital()).sendKeys(Keys.TAB).
+                sendKeys(faker.address().city()).sendKeys(faker.phoneNumber().phoneNumber()).perform();
+        bekle(2);
+        driver.findElement(By.id("zipcode")).sendKeys("222");
+        driver.findElement(By.id("mobile_number")).sendKeys("22222222");
+        driver.findElement(By.xpath("//*[text()='Create Account']")).click();
+        bekle(1);
 
+        Assert.assertTrue(driver.findElement(By.xpath("//*[text()='Account Created!']")).isDisplayed());
+        driver.findElement(By.xpath("//*[text()='Continue']")).click();
+bekle(1);
+        Assert.assertTrue(driver.findElement(By.xpath("//*[text()=' Logged in as '] ")).isDisplayed());
+        bekle(1);
+        driver.findElement(By.xpath("//*[text()=' Delete Account']")).click();
 
-
-
-
-
-
-
+        bekle(1);
+        Assert.assertTrue(driver.findElement(By.xpath("//*[text()='Account Deleted!']")).isDisplayed());
+bekle(1);
 
     }
-
-
-
-
-
-
 
 
 
